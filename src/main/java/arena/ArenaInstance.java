@@ -2,18 +2,38 @@ package arena;
 
 
 import org.bukkit.Location;
+import org.bukkit.World;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Zombie;
 
 public class ArenaInstance  {
+
+    
 
     // static variable single_instance of type Singleton
     private static ArenaInstance arenaInstance = null;
 
 
     // private constructor restricted to this class itself
-    private ArenaInstance()
+    private ArenaInstance(Player player)
     {
+        World world = player.getWorld();
+
+        world.setTime(13000);
+
         //spawn a monster
+        Location loc_spawnMonster = new Location(world, 0, 175, 100);
+
+
+        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
+        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
+        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
+        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
+        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
+        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
+        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
+        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
     }
 
 
@@ -24,10 +44,10 @@ public class ArenaInstance  {
 
 
     // static method to create instance of Singleton class
-    public static ArenaInstance getArenaInstance()
+    public static ArenaInstance getArenaInstance(Player player)
     {
         if (arenaInstance == null)
-            arenaInstance = new ArenaInstance();
+            arenaInstance = new ArenaInstance(player);
 
         return arenaInstance;
     }

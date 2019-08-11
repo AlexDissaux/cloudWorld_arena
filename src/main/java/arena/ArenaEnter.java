@@ -2,6 +2,7 @@ package arena;
 
 import org.bukkit.Location;
 import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -11,11 +12,12 @@ public class ArenaEnter implements Listener {
     @EventHandler
     public void onPlatePressed(PlayerInteractEvent event) {
 
-        Location loc_enterPlate = new Location(event.getPlayer().getWorld(), 0, 175, 53);
+        Player player = event.getPlayer();
+        Location loc_enterButton = new Location(player.getWorld(), 0, 176, 62);
         Block block = event.getClickedBlock();
 
-        if ((block != null) && (block.getLocation().equals(loc_enterPlate))) {
-            ArenaInstance.getArenaInstance().tpPlayer(event.getPlayer());
+        if ((block != null) && (block.getLocation().equals(loc_enterButton))) {
+            ArenaInstance.getArenaInstance(player).tpPlayer(player);
         }
     }
 

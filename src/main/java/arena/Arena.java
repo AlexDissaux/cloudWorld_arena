@@ -7,8 +7,8 @@ import stuff.Stuff;
 
 public class Arena extends JavaPlugin {
 
-    private Server SERVER = getServer();
-    private World CLOUDWORLD = this.SERVER.getWorld("world_cloud");
+    public Server SERVER = getServer();
+    public World CLOUDWORLD = this.SERVER.getWorld("world_cloud");
 
     @Override
     public void onEnable() {
@@ -19,9 +19,10 @@ public class Arena extends JavaPlugin {
 
         // Registering your listener
         this.SERVER.getPluginManager().registerEvents(new Stuff(), this);
+        this.SERVER.getPluginManager().registerEvents(new ArenaEnter(), this);
 
 
-        //spawnMonster = 0 175 100
+        //spawnMonster =
 
         // Try to put block in the world
         //ChunkGenerator.ChunkData generator = this.SERVER.createChunkData(this.CLOUDWORLD);

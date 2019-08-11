@@ -25,7 +25,8 @@ public class Stuff implements Listener {
 
         if ((block != null ) && (block.getLocation().equals(loc_button_warriorStuff)))
         {
-            new Warrior(event.getPlayer());
+            player.chat("You have been stuffed as a Warrior !");
+            new Warrior(player);
         }
     }
 }
