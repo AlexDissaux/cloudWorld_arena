@@ -1,6 +1,7 @@
 package arena;
 
 
+import model.monsterModel;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.EntityType;
@@ -9,35 +10,48 @@ import org.bukkit.entity.Zombie;
 
 public class ArenaInstance  {
 
-    
 
     // static variable single_instance of type Singleton
     private static ArenaInstance arenaInstance = null;
+    private final World world;
+    private int currentLevel = 0;
 
-
-    // private constructor restricted to this class itself
     private ArenaInstance(Player player)
     {
-        World world = player.getWorld();
 
+        World world = player.getWorld();
+        this.world = world;
         world.setTime(13000);
 
-        //spawn a monster
-        Location loc_spawnMonster = new Location(world, 0, 175, 100);
+        this.levelSpawn(this.currentLevel);
+    }
 
+    private void levelSpawn(int i) {
+        for (EntityType mob : monsterModel.getLevels()[i])
+        {
+            this.world.spawnEntity(monsterModel.getSpawnMonster(this.world), mob);
+        }
+    }
 
-        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
-        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
-        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
-        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
-        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
-        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
-        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
-        world.spawnEntity(loc_spawnMonster, EntityType.ZOMBIE);
+    public void nextLevel () {
+        this.currentLevel ++;
+        this.levelSpawn(this.currentLevel);
+
+    }
+
+    public boolean allMobsLevelDead() {
+        boolean res = true;
+        for (EntityType mob : monsterModel.getLevels()[this.currentLevel])
+        {
+            res = (res && ! mob.isAlive());
+        }
+        return res;
     }
 
 
-    public void tpPlayer (Player player) {
+
+
+    void tpPlayer(Player player) {
         player.teleport(new Location(player.getWorld(),0, 175, 70));
     }
 
@@ -49,6 +63,13 @@ public class ArenaInstance  {
         if (arenaInstance == null)
             arenaInstance = new ArenaInstance(player);
 
+        return arenaInstance;
+    }
+    // static method to create instance of Singleton class
+    public static ArenaInstance getArenaInstance()
+    {
+        if (arenaInstance == null)
+            return null;
         return arenaInstance;
     }
 }

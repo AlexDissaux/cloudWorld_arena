@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb72fd03-7024-4112-92e1-d914b5ecfc7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/monsterModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/monsterManager/MonsterManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/arena/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arena/Arena.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/arena/ArenaEnter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arena/ArenaEnter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/arena/ArenaInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/arena/ArenaInstance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stuff/Stuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stuff/Stuff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/arena-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/arena-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/arena/ArenaEnter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/arena/ArenaEnter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/arena/ArenaInstance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/arena/ArenaInstance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +74,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1565525206984</updated>
-      <workItem from="1565525210847" duration="6669000" />
+      <workItem from="1565525210847" duration="9075000" />
+      <workItem from="1565564942350" duration="3628000" />
     </task>
     <servers />
   </component>
@@ -84,7 +87,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

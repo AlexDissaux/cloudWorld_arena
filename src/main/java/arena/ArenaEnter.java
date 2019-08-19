@@ -17,7 +17,8 @@ public class ArenaEnter implements Listener {
         Block block = event.getClickedBlock();
 
         if ((block != null) && (block.getLocation().equals(loc_enterButton))) {
-            ArenaInstance.getArenaInstance(player).tpPlayer(player);
+            ArenaInstance arenaInstance = ArenaInstance.getArenaInstance(player);
+            arenaInstance.tpPlayer(player);
         }
     }
 

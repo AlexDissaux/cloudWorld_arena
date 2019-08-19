@@ -1,5 +1,7 @@
-arena\Arena.class
 stuff\Stuff.class
 stuff\Warrior.class
-arena\ArenaEnter.class
 arena\ArenaInstance.class
+model\monsterModel.class
+arena\Arena.class
+monsterManager\MonsterManager.class
+arena\ArenaEnter.class

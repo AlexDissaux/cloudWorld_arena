@@ -5,7 +5,7 @@ import org.bukkit.World;
 import org.bukkit.plugin.java.JavaPlugin;
 import stuff.Stuff;
 
-public class Arena extends JavaPlugin {
+public class  Arena extends JavaPlugin {
 
     public Server SERVER = getServer();
     public World CLOUDWORLD = this.SERVER.getWorld("world_cloud");
@@ -28,4 +28,5 @@ public class Arena extends JavaPlugin {
         //ChunkGenerator.ChunkData generator = this.SERVER.createChunkData(this.CLOUDWORLD);
         // generator.setBlock(0,0,175,Material.DIRT);
     }
+
 }
